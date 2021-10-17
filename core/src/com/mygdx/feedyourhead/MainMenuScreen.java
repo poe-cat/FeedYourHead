@@ -1,5 +1,6 @@
 package com.mygdx.feedyourhead;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.utils.ScreenUtils;
@@ -33,6 +34,10 @@ public class MainMenuScreen implements Screen {
         game.font.draw(game.batch, "-> Click anywhere to start <-", 100, 100);
         game.batch.end();
 
+        if(Gdx.input.isTouched()) {      //when you click, game screen appears
+            game.setScreen(new GameScreen(game));
+            dispose();
+        }
     }
 
     @Override
