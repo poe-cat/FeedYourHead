@@ -2,6 +2,7 @@ package com.mygdx.feedyourhead;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.utils.ScreenUtils;
 
@@ -24,14 +25,16 @@ public class MainMenuScreen implements Screen {
 
     @Override
     public void render(float delta) {
-        ScreenUtils.clear(0, 0, 0.2f, 1);
+        ScreenUtils.clear(Color.PURPLE);
 
         camera.update();
         game.batch.setProjectionMatrix(camera.combined);
 
         game.batch.begin();
-        game.font.draw(game.batch, "* Come in & Feed Your Head *", 100, 150);
-        game.font.draw(game.batch, "-> Click anywhere to start <-", 100, 100);
+        game.font.draw(game.batch, "Come in & Feed Your Head", 220, 250);
+        game.font.draw(game.batch, "click anywhere to start", 250, 200);
+        game.font.setColor(Color.YELLOW);
+        game.font.getData().setScale(2f);
         game.batch.end();
 
         if(Gdx.input.isTouched()) {      //when you click, game screen appears
