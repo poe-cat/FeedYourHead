@@ -34,7 +34,7 @@ public class MainMenuScreen implements Screen {
         game.font.draw(game.batch, "Come in & Feed Your Head", 220, 250);
         game.font.draw(game.batch, "click anywhere to start", 250, 200);
         game.font.setColor(Color.YELLOW);
-        game.font.getData().setScale(2f);
+        game.font.getData().setScale(2,2);
         game.batch.end();
 
         if(Gdx.input.isTouched()) {      //when you click, game screen appears
