@@ -1,14 +1,23 @@
 package com.mygdx.feedyourhead;
 
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.OrthographicCamera;
+
 
 public class GameScreen implements Screen {
 
     final FeedYourHead game;
 
+    OrthographicCamera camera;
+
     public GameScreen(final FeedYourHead game) {
         this.game = game;
+
+        camera = new OrthographicCamera();
+        camera.setToOrtho(false, 800, 480);
+
     }
+
 
     @Override
     public void show() {
